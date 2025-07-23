@@ -10,8 +10,8 @@ let crabbyY = 30; //y position of the crabby
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -30,7 +30,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   Crabby(); 
   
 }
-
+ 
 function Crabby(){
 
   push();
