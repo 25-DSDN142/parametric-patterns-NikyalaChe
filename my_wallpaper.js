@@ -5,13 +5,13 @@ let legsWidth  = 20;
 let legFill_Width = 15
 let legFill_Height = 30
 
-let crabbyX = 20; //x position of the crabby
+let crabbyX = 70; //x position of the crabby
 let crabbyY = 30; //y position of the crabby
 
 
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(DEVELOP_GLYPH);
+  //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
@@ -27,6 +27,10 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+  if(crabbyX > 50) {
+    legsWidth = 30;
+  }
+  
   Crabby(); 
   
 }
