@@ -23,8 +23,12 @@ function setup_wallpaper(pWallpaper) {
 }
 
 function wallpaper_background() {
-
-
+  background(143, 74, 121); //deeper shade of purple for the background
   
+
+
+
+
+
 }
   
