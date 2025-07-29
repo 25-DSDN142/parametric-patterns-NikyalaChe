@@ -5,7 +5,7 @@ let legsWidth  = 20;
 let legFill_Width = 15
 let legFill_Height = 30
 
-let crabbyX = 70; //x position of the crabby
+let crabbyX = 20; //x position of the crabby
 let crabbyY = 30; //y position of the crabby
 
 
@@ -27,9 +27,7 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  if(crabbyX > 50) {
-    legsWidth = 30;
-  }
+  
   
   Crabby(); 
   
