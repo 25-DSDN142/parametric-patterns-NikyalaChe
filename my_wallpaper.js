@@ -24,18 +24,18 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //mountainBack 
   fill(143, 133, 135); //light grey colour
   noStroke();
-  triangle(0, 200, 30, 130, 60, 200); //triangle 1 back
-  triangle(10, 200, 60, 110, 120, 200); //triangle 2 back
-  triangle(50, 200, 90, 90, 150, 200); //triangle 3 back 
-  triangle(70, 200, 130, 100, 180, 200); //triangle 4 back 
+  triangle(0, 100, 30, 30, 60, 100); //triangle 1 back
+  triangle(10, 100, 60, 10, 120, 100); //triangle 2 back
+  triangle(50, 100, 90, 10, 150, 100); //triangle 3 back 
+  triangle(70, 100, 130, 20, 180, 100); //triangle 4 back 
   
   //mountainbackShadow
   fill(61, 57, 58); //dark grey colour
   noStroke();
-  triangle(0, 200, 30, 130, 10, 200); //triangle 1 back shadow
-  triangle(10, 200, 60, 110, 40, 200); //triangle 2 back shadow 
-  triangle(50, 200, 90, 90, 70, 200); //triangle 3 back shadow
-  triangle(70, 200, 130, 100, 110, 200); //triangle 4 back shadow
+  triangle(0, 100, 30, 30, 10, 100); //triangle 1 back shadow
+  triangle(10, 100, 60, 10, 40, 100); //triangle 2 back shadow 
+  triangle(50, 100, 90, 10, 70, 100); //triangle 3 back shadow
+  triangle(70, 100, 130, 20, 110, 100); //triangle 4 back shadow
   
 //mountainFront
   fill(127, 140, 104); //green colour
