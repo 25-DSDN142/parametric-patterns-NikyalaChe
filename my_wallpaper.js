@@ -1,5 +1,9 @@
 //your parameter variables go here!
+let mountainBackColour = [143, 133, 135]; //light grey colour
+let mountainFrontColour = [127, 140, 104]; //green colour
 
+let mountainStart = 100;  //position of the front and back mountains
+let mountainFinish = 100; //position of the front and back mountains
 
 
 function setup_wallpaper(pWallpaper) {
@@ -20,14 +24,18 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-    
+
+
+
+  //mountains 
+
   //mountainBack 
   fill(143, 133, 135); //light grey colour
   noStroke();
-  triangle(0, 100, 30, 30, 60, 100); //triangle 1 back
-  triangle(10, 100, 60, 10, 120, 100); //triangle 2 back
-  triangle(50, 100, 90, 10, 150, 100); //triangle 3 back 
-  triangle(70, 100, 130, 20, 180, 100); //triangle 4 back 
+  triangle(0, mountainStart, 30, 30, 60, mountainFinish); //triangle 1 back
+  triangle(10, mountainStart, 60, 10, 120, mountainFinish); //triangle 2 back
+  triangle(50, mountainStart, 90, 10, 150, mountainFinish); //triangle 3 back 
+  triangle(70, mountainStart, 130, 20, 180, mountainFinish); //triangle 4 back 
   
   //mountainbackShadow
   fill(61, 57, 58); //dark grey colour
@@ -40,20 +48,20 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 //mountainFront
   fill(127, 140, 104); //green colour
   noStroke();
-  triangle(5, 200, 30, 150, 50, 200); //triangle 1 front
-  triangle(30, 200, 60, 130, 100, 200); //triangle 2 front
-  triangle(60, 200, 110, 110, 150, 200); //triangle 3 front
-  triangle(120, 200, 150, 150, 170, 200); //triangle 4 front
-  triangle(130, 200, 170, 140, 200, 200); //triangle 5 front
+  triangle(5, mountainStart, 30, 50, 50, mountainFinish); //triangle 1 front
+  triangle(30, mountainStart, 60, 30, 100, mountainFinish); //triangle 2 front
+  triangle(60, mountainStart, 110, 10, 150, mountainFinish); //triangle 3 front
+  triangle(120, mountainStart, 150, 50, 170, mountainFinish); //triangle 4 front
+  triangle(130, mountainStart, 170, 40, 200, mountainFinish); //triangle 5 front
 
 //mountainFrontShadow
   fill(85, 92, 72); //dark green colour
   noStroke();
-  triangle(5, 200, 30, 150, 20, 200); //triangle 1 front shadow
-  triangle(30, 200, 60, 130, 40, 200); //triangle 2 front shadow
-  triangle(60, 200, 110, 110, 80, 200); //triangle 3 front shadow
-  triangle(120, 200, 150, 150, 130, 200); //triangle 4 front shadow
-  triangle(130, 200, 170, 140, 150, 200); //triangle 5 front shadow
+  triangle(5, 100, 30, 50, 20, 100); //triangle 1 front shadow
+  triangle(30, 100, 60, 30, 40, 100); //triangle 2 front shadow
+  triangle(60, 100, 110, 10, 80, 100); //triangle 3 front shadow
+  triangle(120, 100, 150, 50, 130, 100); //triangle 4 front shadow
+  triangle(130, 100, 170, 40, 150, 100); //triangle 5 front shadow
 
 
 
