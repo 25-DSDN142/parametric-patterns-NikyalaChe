@@ -26,7 +26,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
  
 function draw() {
 
-  fill(102, 149, 204);
+  fill(245, 125, 125);
   ellipse(50, 70, 60, 20); 
 
 
