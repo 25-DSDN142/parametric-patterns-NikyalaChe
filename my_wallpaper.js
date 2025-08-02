@@ -20,14 +20,24 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+    
+  //mountainBack 
+  fill(143, 133, 135); //dark grey colour
+  triangle(10, 200, 60, 110, 120, 200); //triangle 2 back
+  fill(61, 57, 58); //dark grey colour
+  triangle(10, 200, 58, 115, 40, 200); //triangle 2 back shadow 
+
+  fill(143, 133, 135); //dark grey colour
+  triangle(0, 200, 30, 130, 60, 200); //triangle 1 back
+  fill(61, 57, 58); //dark grey colour
+  triangle(0, 200, 28, 135, 10, 200); //triangle 1 back shadow
+  
+  fill(143, 133, 135); //dark grey colour
+  triangle(50, 200, 90, 90, 150, 200); //triangle 3 back
+  triangle(70, 200, 130, 100, 180, 200); //triangle 4 back 
+
+//mountainFront
+triangle()
   
 }
- 
-function draw() { 
 
-  fill(245, 125, 125); //light red colour 
-  stroke(0); //black stroke
-  ellipse(50, 70, 60, 20); 
-
-
-}
