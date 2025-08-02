@@ -68,14 +68,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(80, 60, 30, 20); //cloud 3
   ellipse(110, 40, 30, 20); //cloud 4
   ellipse(110, 50, 40, 30); //cloud 5
-//cloud1 infill colour
 
 
-  //ellipse(50, 40, 40, 30); //cloud 1
-  //ellipse(30, 40, 30, 20); //cloud 2
-  //ellipse(40, 50, 30, 20); //cloud 3
-  //ellipse(70, 30, 30, 20); //cloud 4
-  //ellipse(70, 40, 40, 30); //cloud 5
+  ellipse(50, 40, 40, 30); //cloud 1
+  ellipse(30, 40, 30, 20); //cloud 2
+  ellipse(40, 50, 30, 20); //cloud 3
+  ellipse(70, 30, 30, 20); //cloud 4
+  ellipse(70, 40, 40, 30); //cloud 5
 
   
 }
