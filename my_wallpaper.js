@@ -55,26 +55,27 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   triangle(120, 200, 150, 150, 130, 200); //triangle 4 front shadow
   triangle(130, 200, 170, 140, 150, 200); //triangle 5 front shadow
 
-//sun
-  fill(250, 241, 110) //light yellow colour
-  noStroke();
-  ellipse(160, 40, 40, 40); //sun
 
+
+
+
+  
+  //moving this out the way for now - come back when you need to add clouds
 //clouds
-  fill(255, 255, 255); //white colour
-  noStroke(); 
-  ellipse(90, 50, 40, 30); //cloud 1
-  ellipse(70, 50, 30, 20); //cloud 2
-  ellipse(80, 60, 30, 20); //cloud 3
-  ellipse(110, 40, 30, 20); //cloud 4
-  ellipse(110, 50, 40, 30); //cloud 5
+  //fill(255, 255, 255); //white colour
+  //noStroke(); 
+  //ellipse(90, 50, 40, 30); //cloud 1
+  //ellipse(70, 50, 30, 20); //cloud 2
+  //ellipse(80, 60, 30, 20); //cloud 3
+  //ellipse(110, 40, 30, 20); //cloud 4
+  //ellipse(110, 50, 40, 30); //cloud 5
 
 
-  ellipse(50, 40, 40, 30); //cloud 1
-  ellipse(30, 40, 30, 20); //cloud 2
-  ellipse(40, 50, 30, 20); //cloud 3
-  ellipse(70, 30, 30, 20); //cloud 4
-  ellipse(70, 40, 40, 30); //cloud 5
+  //ellipse(50, 40, 40, 30); //cloud 1
+  //ellipse(30, 40, 30, 20); //cloud 2
+  //ellipse(40, 50, 30, 20); //cloud 3
+  //ellipse(70, 30, 30, 20); //cloud 4
+  //ellipse(70, 40, 40, 30); //cloud 5
 
   
 }
