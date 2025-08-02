@@ -20,13 +20,13 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
- 
   
 }
  
-function draw() {
+function draw() { 
 
-  fill(245, 125, 125);
+  fill(245, 125, 125); //light red colour 
+  stroke(0); //black stroke
   ellipse(50, 70, 60, 20); 
 
 
