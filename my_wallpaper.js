@@ -42,7 +42,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
   mountains(0 + mountainsX, 0 + mountainsY);  
-
+  mountainsBelow(0 + mountainsX, 0 + mountainsY); 
 }
 
 function mountains(x, y) {
@@ -85,13 +85,19 @@ function mountains(x, y) {
   triangle(120 + x, 100 + y, 150 + x, 50 + y, 130 + x, 100 + y); //triangle 4 front shadow
   triangle(130 + x, 100 + y, 170 + x, 40 + y, 150 + x, 100 + y); //triangle 5 front shadow
 
+}
 
-//mountainBelow - this is creating the same mountain ranges but flipped upside down and underneath the top mountains
+function mountainsBelow(x, y) {
+//mountainsbelow - this is creating the same mountain ranges but flipped upside down and underneath the top mountains
 
 //mountainBelowBack - creating back mountain ranges for the below scene
 fill(143, 133, 135); //light brown colour
-noStrokew();
-triangle(0 + x, 200 + y, 30 + x,)
+noStroke();
+triangle(0 + x, 100 + y, 30 + x, 170 + y, 60 + x, 100 + y); //tri1 back below
+triangle(10 + x, 100 + y, 60 + x, 190 + y, 120 + x, 100 + y); //tri2 back below
+triangle(50 + x, 100 + y, 90 + x, 190 + y, 150 + x, 100 + y); //tri3 back below
+triangle(70 + x, 100 + y, 130 + x, 180 + y, 180 + x, 100 + y); //tri4 back below
+
 
 
 // reference for the below mountains
