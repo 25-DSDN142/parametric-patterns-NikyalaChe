@@ -30,6 +30,9 @@ let setTime = 1; //use 1 or 0 to select night or day
 
 let skylineScale = 1.1; //scale of skyline, 1 being normal size and 2 being double the size
 
+let skylineYBase = 100; // y position of skyline to line up with mountains
+let skylineXBase = 100; // x position of skyline to line up with mountains
+
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
@@ -54,10 +57,10 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
  
-  skyline(0 + mountainsX, 0 + mountainsY, skylineScale); //draw the skyline
-  skyline(0 + mountainsBelowX, 0 + mountainsBelowY, skylineScale); //draw the skyline below
-  mountains(0 + mountainsX, 0 + mountainsY, skylineScale);  
-  mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY, skylineScale); 
+  skyline(0 + mountainsX, 0 + mountainsY); //draw the skyline
+  skyline(0 + mountainsBelowX, 0 + mountainsBelowY); //draw the skyline below
+  mountains(0 + mountainsX, 0 + mountainsY);  
+  mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
   
 
 }
@@ -158,34 +161,34 @@ function skyline(x, y) {
   beginShape();
   
   //vertex for top skyline
-  vertex(0 * skylineScale + x, 100 * skylineScale + y,);
-  vertex(30 * skylineScale + x, 10 * skylineScale + y);
-  vertex(40 * skylineScale + x, 30 * skylineScale + y);
-  vertex(60 * skylineScale + x, 0 * skylineScale + y);
-  vertex(78 * skylineScale + x, 25 * skylineScale + y);
-  vertex(90 * skylineScale + x, 0 * skylineScale + y);
-  vertex(100 * skylineScale + x, 15 * skylineScale + y);
-  vertex(110 * skylineScale + x, 0 * skylineScale + y);
-  vertex(120 * skylineScale + x, 20 * skylineScale + y);
-  vertex(130 * skylineScale + x, 10 * skylineScale + y);
-  vertex(155 * skylineScale + x, 45 * skylineScale + y);
-  vertex(170 * skylineScale + x, 30 * skylineScale + y);
-  vertex(200 * skylineScale + x, 100 * skylineScale + y);
+  vertex(skylineXBase + (0 - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y,);
+  vertex(skylineXBase + (30 - skylineXBase) * skylineScale + x, skylineYBase + (10 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (40 - skylineXBase) * skylineScale + x, skylineYBase + (30 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (60 - skylineXBase) * skylineScale + x, skylineYBase + (0  - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (78 - skylineXBase) * skylineScale + x, skylineYBase + (25 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (90 - skylineXBase) * skylineScale + x, skylineYBase + (0  - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (100- skylineXBase)  * skylineScale + x, skylineYBase + (15 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (110- skylineXBase)  * skylineScale + x, skylineYBase + (0  - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (120- skylineXBase)  * skylineScale + x, skylineYBase + (20 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (130- skylineXBase)  * skylineScale + x, skylineYBase + (10 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (155- skylineXBase)  * skylineScale + x, skylineYBase + (45 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (170- skylineXBase)  * skylineScale + x, skylineYBase + (30 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (200- skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
 
   //vertext for bottom skyline
-  vertex(0 * skylineScale + x, 100 * skylineScale + y);
-  vertex(30 * skylineScale + x, 190 * skylineScale + y);
-  vertex(40 * skylineScale + x, 170 * skylineScale + y);
-  vertex(60 * skylineScale + x, 200 * skylineScale + y);
-  vertex(75 * skylineScale + x, 175 * skylineScale + y);
-  vertex(90 * skylineScale + x, 200 * skylineScale + y);
-  vertex(100 * skylineScale + x, 185 * skylineScale + y);
-  vertex(110 * skylineScale + x, 200 * skylineScale + y);
-  vertex(120 * skylineScale + x, 180 * skylineScale + y);
-  vertex(130 * skylineScale + x, 190 * skylineScale + y);
-  vertex(155 * skylineScale + x, 155 * skylineScale + y);
-  vertex(170 * skylineScale + x, 170 * skylineScale + y);
-  vertex(200 * skylineScale + x, 100 * skylineScale + y);
+  vertex(skylineXBase + (0  - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (30  - skylineXBase) * skylineScale + x, skylineYBase + (190 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (40  - skylineXBase) * skylineScale + x, skylineYBase + (170 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (60  - skylineXBase) * skylineScale + x, skylineYBase + (200 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (75  - skylineXBase) * skylineScale + x, skylineYBase + (175 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (90  - skylineXBase) * skylineScale + x, skylineYBase + (200 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (100 - skylineXBase)  * skylineScale + x, skylineYBase + (185 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (110 - skylineXBase)  * skylineScale + x, skylineYBase + (200 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (120 - skylineXBase)  * skylineScale + x, skylineYBase + (180 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (130 - skylineXBase)  * skylineScale + x, skylineYBase + (190 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (155 - skylineXBase)  * skylineScale + x, skylineYBase + (155 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (170 - skylineXBase)  * skylineScale + x, skylineYBase + (170 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (200 - skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
   endShape();
 
 }
