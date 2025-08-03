@@ -1,9 +1,24 @@
 //your parameter variables go here!
-let mountainBackColour = [143, 133, 135]; //light grey colour
-let mountainFrontColour = [127, 140, 104]; //green colour
 
-let mountainStart = 100;  //start position of the front and back mountains
-let mountainFinish = 100; //finish position of the front and back mountains
+//Change colours of mountains and shadows
+//original colours to refer back to 
+//let mountainBackColour = [143, 133, 135]; //light grey colour
+//let mountainFrontColour = [127, 140, 104];
+
+//let mountainShadowBackColour = [61, 57, 58]; 
+//let mountainShadowFrontColour = [85, 92, 72]; 
+
+//Change colours of mountains and shadows
+let mountainBackColour = [143, 133, 135]
+let mountainFrontColour = [127, 140, 104];
+
+let mountainShadowBackColour = [61, 57, 58]; 
+let mountainShadowFrontColour = [85, 92, 72]; 
+
+//mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
+
+let mountainsX = 0; 
+let mountainsY = 0; 
 
 
 
@@ -26,40 +41,43 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
-  mountains(20, 40);  
+  mountains(0 + mountainsX, 0 + mountainsY);  
 
 }
 
 function mountains(x, y) {
   //mountains 
 
-  //mountainBack 
-  fill(143, 133, 135); //light grey colour
+  //mountainBack - creating a mountain that will be taller than front mountains and sit behind them 
+  //fill(143, 133, 135); //light brown colour
+  fill(mountainBackColour); //light brown colour
   noStroke();
-  triangle(0 + x, mountainStart + y, 30 + x, 30 + y, 60 + x, mountainFinish + y,); //triangle 1 back
-  triangle(10 + x, mountainStart + y, 60 + x, 10 + y, 120 + x, mountainFinish + y,); //triangle 2 back
-  triangle(50 + x, mountainStart + y, 90 + x, 10 + y, 150 + x, mountainFinish + y,); //triangle 3 back 
-  triangle(70 + x, mountainStart + y, 130 + x, 20 + y, 180 + x, mountainFinish + y,); //triangle 4 back 
+  triangle(0 + x, 100 + y, 30 + x, 30 + y, 60 + x, 100 + y,); //triangle 1 back 
+  triangle(10 + x, 100 + y, 60 + x, 10 + y, 120 + x, 100 + y,); //triangle 2 back
+  triangle(50 + x, 100 + y, 90 + x, 10 + y, 150 + x, 100 + y,); //triangle 3 back 
+  triangle(70 + x, 100 + y, 130 + x, 20 + y, 180 + x, 100 + y,); //triangle 4 back 
   
-  //mountainbackShadow
-  fill(61, 57, 58); //dark grey colour
+  //mountainbackShadow - creating a shadow for the back mountains
+  //gives the moutain a 3D effect
+  fill(mountainShadowBackColour); //dark brown colour
   noStroke();
   triangle(0 + x, 100 + y, 30 + x, 30 + y, 10 + x, 100 + y); //triangle 1 back shadow
   triangle(10 + x, 100 + y, 60 + x, 10 + y, 40 + x, 100 + y); //triangle 2 back shadow 
   triangle(50 + x, 100 + y, 90 + x, 10 + y, 70 + x, 100 + y); //triangle 3 back shadow
   triangle(70 + x, 100 + y, 130 + x, 20 + y, 110 + x, 100 + y); //triangle 4 back shadow
   
-//mountainFront
-  fill(127, 140, 104); //green colour
+//mountainFront - creating a mountain that will be shorter than back mountains and sit in front of them
+  fill(mountainFrontColour); //green colour
   noStroke();
-  triangle(5 + x, mountainStart + y, 30 + x, 50 + y, 50 + x, mountainFinish + y); //triangle 1 front
-  triangle(30 + x, mountainStart + y, 60 + x, 30 + y, 100 + x, mountainFinish + y); //triangle 2 front
-  triangle(60 + x, mountainStart + y, 110 + x, 10 + y, 150 + x, mountainFinish + y); //triangle 3 front
-  triangle(120 + x, mountainStart + y, 150 + x, 50 + y, 170 + x, mountainFinish + y); //triangle 4 front
-  triangle(130 + x, mountainStart + y, 170 + x, 40 + y, 200 + x, mountainFinish + y); //triangle 5 front
+  triangle(5 + x, 100 + y, 30 + x, 50 + y, 50 + x, 100 + y); //triangle 1 front
+  triangle(30 + x, 100 + y, 60 + x, 30 + y, 100 + x, 100 + y); //triangle 2 front
+  triangle(60 + x, 100 + y, 110 + x, 10 + y, 150 + x, 100 + y); //triangle 3 front
+  triangle(120 + x, 100 + y, 150 + x, 50 + y, 180 + x, 100 + y); //triangle 4 front
+  triangle(130 + x, 100 + y, 170 + x, 40 + y, 200 + x, 100 + y); //triangle 5 front
 
-//mountainFrontShadow
-  fill(85, 92, 72); //dark green colour
+//mountainFrontShadow - creating a shadow for the back mountains
+  //gives the moutain a 3D effect
+  fill(mountainShadowBackColour); //dark green colour
   noStroke();
   triangle(5 + x, 100 + y, 30 + x, 50 + y, 20 + x, 100 + y); //triangle 1 front shadow
   triangle(30 + x, 100 + y, 60 + x, 30 + y, 40 + x, 100 + y); //triangle 2 front shadow
@@ -68,8 +86,23 @@ function mountains(x, y) {
   triangle(130 + x, 100 + y, 170 + x, 40 + y, 150 + x, 100 + y); //triangle 5 front shadow
 
 
+//mountainBelow - this is creating the same mountain ranges but flipped upside down and underneath the top mountains
+
+//mountainBelowBack - creating back mountain ranges for the below scene
+fill(143, 133, 135); //light brown colour
+noStrokew();
+triangle(0 + x, 200 + y, 30 + x,)
 
 
+// reference for the below mountains
+ //mountainBack - creating a mountain that will be taller than front mountains and sit behind them 
+  //fill(143, 133, 135); //light grey colour
+  //noStroke();
+  //triangle(0 + x, 100 + y, 30 + x, 30 + y, 60 + x, 100 + y,); //triangle 1 back 
+  //triangle(10 + x, 100 + y, 60 + x, 10 + y, 120 + x, 100 + y,); //triangle 2 back
+  //triangle(50 + x, 100 + y, 90 + x, 10 + y, 150 + x, 100 + y,); //triangle 3 back 
+  //triangle(70 + x, 100 + y, 130 + x, 20 + y, 180 + x, 100 + y,); //triangle 4 back 
+  
 
   
   //moving this out the way for now - come back when you need to add clouds
