@@ -20,7 +20,7 @@ let mountainShadowFrontColour = [85, 92, 72];
 let mountainsX = 0; // x position of the mountains
 let mountainsY = 0; // y position of the mountains
 
-let setTime = 0; //use 1 or 0 to select night or day 
+let setTime = 1; //use 1 or 0 to select night or day 
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -39,7 +39,7 @@ function wallpaper_background() {
    if (setTime == 0) { //day
     background(160, 186, 217); //light blue  colour
    } else { //night
-    background(0, 0, 0); //black colour 
+    background(3, 38, 87); //dark blue colour
    }
 
 }
@@ -129,23 +129,6 @@ triangle(70 + x, 101 + y, 130 + x, 180 + y, 180 + x, 101 + y); //tri4 back below
   triangle(120 + x, 101 + y, 150 + x, 150 + y, 130 + x, 101 + y); //triangle 4 front shadow
   triangle(130 + x, 101 + y, 170 + x, 160 + y, 150 + x, 101 + y); //triangle 5 front shadow
 
-  
-  //moving this out the way for now - come back when you need to add clouds
-//clouds
-  //fill(255, 255, 255); //white colour
-  //noStroke(); 
-  //ellipse(90, 50, 40, 30); //cloud 1
-  //ellipse(70, 50, 30, 20); //cloud 2
-  //ellipse(80, 60, 30, 20); //cloud 3
-  //ellipse(110, 40, 30, 20); //cloud 4
-  //ellipse(110, 50, 40, 30); //cloud 5
-
-
-  //ellipse(50, 40, 40, 30); //cloud 1
-  //ellipse(30, 40, 30, 20); //cloud 2
-  //ellipse(40, 50, 30, 20); //cloud 3
-  //ellipse(70, 30, 30, 20); //cloud 4
-  //ellipse(70, 40, 40, 30); //cloud 5
 
   
 }
