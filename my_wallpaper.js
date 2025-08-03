@@ -26,8 +26,8 @@ let mountainsY = 0; // y position of the mountains
 let mountainsBelowX = 0; //x positon of the mountains below
 let mountainsBelowY = 0; //y position of the mountains below
 
-
 let setTime = 0; //use 1 or 0 to select night or day 
+
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
@@ -52,11 +52,12 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+  skyline(0 + mountainsX, 0 + mountainsY); //draw the skyline
 
   mountains(0 + mountainsX, 0 + mountainsY);  
   mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
+  
 
-  //var middleYaxis = 100; //this is the middle of the y axis 
 }
 
 function mountains(x, y) {
@@ -144,5 +145,43 @@ triangle(70 + x, middleYaxis + y, 130 + x, 180 + y, 180 + x, middleYaxis + y); /
 
 
   
+}
+
+function skyline() {
+  fill(250, 235, 147) //light yellow colour 
+  noStroke(); 
+  beginShape();
+  
+  //vertex for top skyline
+  vertex(0, 100,);
+  vertex(30, 10);
+  vertex(40, 30);
+  vertex(60, 0);
+  vertex(78, 25);
+  vertex(90, 0);
+  vertex(100, 15);
+  vertex(110, 0);
+  vertex(120, 20);
+  vertex(130, 10);
+  vertex(155, 45);
+  vertex(170, 30);
+  vertex(200, 100);
+
+  //vertext for bottom skyline
+  vertex(0, 100);
+  vertex(30, 190);
+  vertex(40, 170);
+  vertex(60, 200);
+  vertex(75, 175);
+  vertex(90, 200);
+  vertex(100, 185);
+  vertex(110, 200);
+  vertex(120, 180);
+  vertex(130, 190);
+  vertex(155, 155);
+  vertex(170, 170);
+  vertex(200, 100);
+  endShape();
+
 }
 
