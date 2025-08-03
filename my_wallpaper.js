@@ -2,23 +2,23 @@
 
 //Change colours of mountains and shadows
 //original colours to refer back to 
-//let mountainBackColour = [143, 133, 135]; //light grey colour
-//let mountainFrontColour = [127, 140, 104];
+//let mountainBackTopColour = [143, 133, 135]; //light grey colour
+//let mountainFrontTopColour = [127, 140, 104];
 
 //let mountainShadowBackColour = [61, 57, 58]; 
 //let mountainShadowFrontColour = [85, 92, 72]; 
 
 //Change colours of mountains and shadows of the top half of the mountains
-let mountainBackColour = [143, 133, 135]
-let mountainFrontColour = [127, 140, 104];
-let mountainShadowBackColour = [61, 57, 58]; 
-let mountainShadowFrontColour = [85, 92, 72]; 
+let mountainBackTopColour = [143, 133, 135]
+let mountainFrontTopColour = [127, 140, 104];
+let mountainShadowBackTopColour = [61, 57, 58]; 
+let mountainShadowFrontTopColour = [85, 92, 72]; 
 //change colours of the mountains and shadows of the bottom half of the mountains
 //they are currently the sam as the top half but you can change it if you want
-let mountainBackBelowColour = [201, 245, 209]; //light brown colour
-let mountainFrontBelowColour = [222, 100, 143]; //green colour
-let mountainShadowBackBelowColour = [51, 82, 57]; //dark brown colour
-let mountainShadowFrontBelowColour = [107, 3, 40]; //dark green colour
+let mountainBackBelowColour = [143, 133, 135]; //light brown colour
+let mountainFrontBelowColour = [127, 140, 104]; //green colour
+let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
+let mountainShadowFrontBelowColour = [85, 92, 72]; //dark green colour
 
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
@@ -28,7 +28,7 @@ let mountainsBelowY = 0; //y position of the mountains below
 
 let setTime = 1; //use 1 or 0 to select night or day 
 
-let skylineScale = 1.1; //scale of skyline, 1 being normal size and 2 being double the size
+let skylineScale = 1; //scale of skyline, 1 being normal size and 2 being double the size
 
 let skylineYBase = 100; // y position of skyline to line up with mountains
 let skylineXBase = 100; // x position of skyline to line up with mountains
@@ -72,7 +72,7 @@ function mountains(x, y) {
 
   //mountainBack - creating a mountain that will be taller than front mountains and sit behind them 
   //fill(143, 133, 135); //light brown colour
-  fill(mountainBackColour); //light brown colour
+  fill(mountainBackTopColour); //light brown colour
   noStroke();
   triangle(0 + x, middleYaxis + y, 30 + x, 30 + y, 60 + x, middleYaxis + y,); //triangle 1 back 
   triangle(10 + x, middleYaxis + y, 60 + x, 10 + y, 120 + x, middleYaxis + y,); //triangle 2 back
@@ -81,7 +81,7 @@ function mountains(x, y) {
   
   //mountainbackShadow - creating a shadow for the back mountains
   //gives the moutain a 3D effect
-  fill(mountainShadowBackColour); //dark brown colour
+  fill(mountainShadowBackTopColour); //dark brown colour
   noStroke();
   triangle(0 + x, middleYaxis + y, 30 + x, 30 + y, 10 + x, middleYaxis + y); //triangle 1 back shadow
   triangle(10 + x, middleYaxis + y, 60 + x, 10 + y, 40 + x, middleYaxis + y); //triangle 2 back shadow 
@@ -89,7 +89,7 @@ function mountains(x, y) {
   triangle(70 + x, middleYaxis + y, 130 + x, 20 + y, 110 + x, middleYaxis + y); //triangle 4 back shadow
   
 //mountainFront - creating a mountain that will be shorter than back mountains and sit in front of them
-  fill(mountainFrontColour); //green colour
+  fill(mountainFrontTopColour); //green colour
   noStroke();
   triangle(5 + x, middleYaxis + y, 30 + x, 50 + y, 50 + x, middleYaxis + y); //triangle 1 front
   triangle(30 + x, middleYaxis + y, 60 + x, 30 + y, 100 + x, middleYaxis + y); //triangle 2 front
@@ -99,7 +99,7 @@ function mountains(x, y) {
 
 //mountainFrontShadow - creating a shadow for the back mountains
   //gives the moutain a 3D effect
-  fill(mountainShadowFrontColour); //dark green colour
+  fill(mountainShadowFrontTopColour); //dark green colour
   noStroke();
   triangle(5 + x, middleYaxis + y, 30 + x, 50 + y, 20 + x, middleYaxis + y); //triangle 1 front shadow
   triangle(30 + x, middleYaxis + y, 60 + x, 30 + y, 40 + x, middleYaxis + y); //triangle 2 front shadow
@@ -161,7 +161,7 @@ function skyline(x, y) {
   beginShape();
   
   //vertex for top skyline
-  vertex(skylineXBase + (0 - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y,);
+  vertex(skylineXBase + (-1 - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y,);
   vertex(skylineXBase + (30 - skylineXBase) * skylineScale + x, skylineYBase + (10 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (40 - skylineXBase) * skylineScale + x, skylineYBase + (30 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (60 - skylineXBase) * skylineScale + x, skylineYBase + (0  - skylineYBase) * skylineScale + y);
@@ -173,10 +173,10 @@ function skyline(x, y) {
   vertex(skylineXBase + (130- skylineXBase)  * skylineScale + x, skylineYBase + (10 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (155- skylineXBase)  * skylineScale + x, skylineYBase + (45 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (170- skylineXBase)  * skylineScale + x, skylineYBase + (30 - skylineYBase) * skylineScale + y);
-  vertex(skylineXBase + (200- skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (201- skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
 
   //vertext for bottom skyline
-  vertex(skylineXBase + (0  - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (-1  - skylineXBase) * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (30  - skylineXBase) * skylineScale + x, skylineYBase + (190 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (40  - skylineXBase) * skylineScale + x, skylineYBase + (170 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (60  - skylineXBase) * skylineScale + x, skylineYBase + (200 - skylineYBase) * skylineScale + y);
@@ -188,7 +188,7 @@ function skyline(x, y) {
   vertex(skylineXBase + (130 - skylineXBase)  * skylineScale + x, skylineYBase + (190 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (155 - skylineXBase)  * skylineScale + x, skylineYBase + (155 - skylineYBase) * skylineScale + y);
   vertex(skylineXBase + (170 - skylineXBase)  * skylineScale + x, skylineYBase + (170 - skylineYBase) * skylineScale + y);
-  vertex(skylineXBase + (200 - skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
+  vertex(skylineXBase + (201 - skylineXBase)  * skylineScale + x, skylineYBase + (100 - skylineYBase) * skylineScale + y);
   endShape();
 
 }
