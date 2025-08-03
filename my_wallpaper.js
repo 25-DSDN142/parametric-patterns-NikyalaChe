@@ -26,15 +26,16 @@ let mountainsY = 0; // y position of the mountains
 let mountainsBelowX = 0; //x positon of the mountains below
 let mountainsBelowY = 0; //y position of the mountains below
 
-let setTime = 0; //use 1 or 0 to select night or day 
+let setTime = 1; //use 1 or 0 to select night or day 
 
+let skylineScale = 1.1; //scale of skyline, 1 being normal size and 2 being double the size
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -52,10 +53,11 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  skyline(0 + mountainsX, 0 + mountainsY); //draw the skyline
-
-  mountains(0 + mountainsX, 0 + mountainsY);  
-  mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
+ 
+  skyline(0 + mountainsX, 0 + mountainsY, skylineScale); //draw the skyline
+  skyline(0 + mountainsBelowX, 0 + mountainsBelowY, skylineScale); //draw the skyline below
+  mountains(0 + mountainsX, 0 + mountainsY, skylineScale);  
+  mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY, skylineScale); 
   
 
 }
@@ -147,40 +149,43 @@ triangle(70 + x, middleYaxis + y, 130 + x, 180 + y, 180 + x, middleYaxis + y); /
   
 }
 
-function skyline() {
+function skyline(x, y) {
+
+ 
+
   fill(250, 235, 147) //light yellow colour 
   noStroke(); 
   beginShape();
   
   //vertex for top skyline
-  vertex(0, 100,);
-  vertex(30, 10);
-  vertex(40, 30);
-  vertex(60, 0);
-  vertex(78, 25);
-  vertex(90, 0);
-  vertex(100, 15);
-  vertex(110, 0);
-  vertex(120, 20);
-  vertex(130, 10);
-  vertex(155, 45);
-  vertex(170, 30);
-  vertex(200, 100);
+  vertex(0 * skylineScale + x, 100 * skylineScale + y,);
+  vertex(30 * skylineScale + x, 10 * skylineScale + y);
+  vertex(40 * skylineScale + x, 30 * skylineScale + y);
+  vertex(60 * skylineScale + x, 0 * skylineScale + y);
+  vertex(78 * skylineScale + x, 25 * skylineScale + y);
+  vertex(90 * skylineScale + x, 0 * skylineScale + y);
+  vertex(100 * skylineScale + x, 15 * skylineScale + y);
+  vertex(110 * skylineScale + x, 0 * skylineScale + y);
+  vertex(120 * skylineScale + x, 20 * skylineScale + y);
+  vertex(130 * skylineScale + x, 10 * skylineScale + y);
+  vertex(155 * skylineScale + x, 45 * skylineScale + y);
+  vertex(170 * skylineScale + x, 30 * skylineScale + y);
+  vertex(200 * skylineScale + x, 100 * skylineScale + y);
 
   //vertext for bottom skyline
-  vertex(0, 100);
-  vertex(30, 190);
-  vertex(40, 170);
-  vertex(60, 200);
-  vertex(75, 175);
-  vertex(90, 200);
-  vertex(100, 185);
-  vertex(110, 200);
-  vertex(120, 180);
-  vertex(130, 190);
-  vertex(155, 155);
-  vertex(170, 170);
-  vertex(200, 100);
+  vertex(0 * skylineScale + x, 100 * skylineScale + y);
+  vertex(30 * skylineScale + x, 190 * skylineScale + y);
+  vertex(40 * skylineScale + x, 170 * skylineScale + y);
+  vertex(60 * skylineScale + x, 200 * skylineScale + y);
+  vertex(75 * skylineScale + x, 175 * skylineScale + y);
+  vertex(90 * skylineScale + x, 200 * skylineScale + y);
+  vertex(100 * skylineScale + x, 185 * skylineScale + y);
+  vertex(110 * skylineScale + x, 200 * skylineScale + y);
+  vertex(120 * skylineScale + x, 180 * skylineScale + y);
+  vertex(130 * skylineScale + x, 190 * skylineScale + y);
+  vertex(155 * skylineScale + x, 155 * skylineScale + y);
+  vertex(170 * skylineScale + x, 170 * skylineScale + y);
+  vertex(200 * skylineScale + x, 100 * skylineScale + y);
   endShape();
 
 }
