@@ -23,6 +23,9 @@ let mountainShadowFrontBelowColour = [107, 3, 40]; //dark green colour
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
 let mountainsY = 0; // y position of the mountains
+let mountainsBelowX = 0; //x positon of the mountains below
+let mountainsBelowY = 0; //y position of the mountains below
+
 
 let setTime = 0; //use 1 or 0 to select night or day 
 
@@ -51,7 +54,7 @@ function wallpaper_background() {
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
   mountains(0 + mountainsX, 0 + mountainsY);  
-  mountainsBelow(0 + mountainsX, 0 + mountainsY); 
+  mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
 
   //var middleYaxis = 100; //this is the middle of the y axis 
 }
@@ -60,6 +63,7 @@ function mountains(x, y) {
   //mountains 
   //tophalf
   var middleYaxis = 100; //this is the middle of the y axis 
+
   //mountainBack - creating a mountain that will be taller than front mountains and sit behind them 
   //fill(143, 133, 135); //light brown colour
   fill(mountainBackColour); //light brown colour
