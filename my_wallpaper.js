@@ -1,32 +1,48 @@
 //your parameter variables go here!
 
 //Change colours of mountains and shadows
-//original colours to refer back to 
+//ORIGINAL COLOUR TO REFER BACK TO 
 //let mountainBackTopColour = [143, 133, 135]; //light grey colour
 //let mountainFrontTopColour = [127, 140, 104];
 
 //let mountainShadowBackColour = [61, 57, 58]; 
 //let mountainShadowFrontColour = [85, 92, 72]; 
 
-//Change colours of mountains and shadows of the top half of the mountains
-let mountainBackTopColour = [143, 133, 135]
-let mountainFrontTopColour = [127, 140, 104];
+//2ND COLOUR DESIGN - final desing colour choice
+//TOP MOUNTAINS
+let mountainBackTopColour = [130, 145, 207]
+let mountainFrontTopColour = [209, 174, 209];
+let mountainShadowBackTopColour = [94, 35, 117]; 
+let mountainShadowFrontTopColour = [252, 209, 116]; 
+//BELOW MOUNTAINS
+let mountainBackBelowColour = [130, 145, 207]; //light brown colour
+let mountainFrontBelowColour = [209, 174, 209]; 
 
-let mountainShadowBackTopColour = [61, 57, 58]; 
-let mountainShadowFrontTopColour = [85, 92, 72]; 
+let mountainShadowBackBelowColour = [94, 35, 117]; //dark brown colour
+let mountainShadowFrontBelowColour = [252, 209, 116]; //dark green colour
+
+//SKYLINE COLOUR CHOICE
+//blue skylineColour option - [206, 237, 216]
+
+//Change colours of mountains and shadows of the top half of the mountains
+//let mountainBackTopColour = [143, 133, 135]
+//let mountainFrontTopColour = [127, 140, 104];
+
+//let mountainShadowBackTopColour = [61, 57, 58]; 
+//let mountainShadowFrontTopColour = [85, 92, 72]; 
 //change colours of the mountains and shadows of the bottom half of the mountains
 //they are currently the sam as the top half but you can change it if you want
-let mountainBackBelowColour = [143, 133, 135]; //light brown colour
-let mountainFrontBelowColour = [127, 140, 104]; 
+//let mountainBackBelowColour = [143, 133, 135]; //light brown colour
+//let mountainFrontBelowColour = [127, 140, 104]; 
 
-let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
-let mountainShadowFrontBelowColour = [85, 92, 72]; //dark green colour
+//let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
+//let mountainShadowFrontBelowColour = [85, 92, 72]; //dark green colour
 
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
 let mountainsY = 0; // y position of the mountains
-let mountainsBelowX = 0; //x positon of the mountains below
-let mountainsBelowY = 0; //y position of the mountains below
+let mountainsBelowX = 60; //x positon of the mountains below
+let mountainsBelowY = 60; //y position of the mountains below
 
 let setTime = 0; //use 1 or 0 to select night or day 
 
@@ -37,12 +53,13 @@ let skylineXBase = 100; // x position of skyline to line up with mountains
 
 //original skyline colour - [250, 235, 147]
 //blue skylineColour option - [206, 237, 216]
-let skylineColour = [250, 235, 147]; // colour of skyline
+let skylineColour = [206, 237, 216]; // blue colour
+//let skylineColour = [250, 235, 147]; // colour of skyline
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  //pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
