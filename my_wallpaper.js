@@ -9,18 +9,18 @@
 //let mountainShadowFrontColour = [85, 92, 72]; 
 
 //Change colours of mountains and shadows of the top half of the mountains
-let mountainBackTopColour = [222, 160, 196]
-let mountainFrontTopColour = [209, 208, 186];
+let mountainBackTopColour = [143, 133, 135]
+let mountainFrontTopColour = [127, 140, 104];
 
 let mountainShadowBackTopColour = [61, 57, 58]; 
-let mountainShadowFrontTopColour = [245, 162, 118]; 
+let mountainShadowFrontTopColour = [85, 92, 72]; 
 //change colours of the mountains and shadows of the bottom half of the mountains
 //they are currently the sam as the top half but you can change it if you want
-let mountainBackBelowColour = [222, 160, 196]; //light brown colour
-let mountainFrontBelowColour = [209, 208, 186]; 
+let mountainBackBelowColour = [143, 133, 135]; //light brown colour
+let mountainFrontBelowColour = [127, 140, 104]; 
 
 let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
-let mountainShadowFrontBelowColour = [245, 162, 118]; //dark green colour
+let mountainShadowFrontBelowColour = [85, 92, 72]; //dark green colour
 
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
@@ -30,13 +30,14 @@ let mountainsBelowY = 0; //y position of the mountains below
 
 let setTime = 0; //use 1 or 0 to select night or day 
 
-let skylineScale = 1.2; //scale of skyline, 1 being normal size and 2 being double the size
+let skylineScale = 1; //scale of skyline, 1 being normal size and 2 being double the size
 
 let skylineYBase = 100; // y position of skyline to line up with mountains
 let skylineXBase = 100; // x position of skyline to line up with mountains
 
 //original skyline colour - [250, 235, 147]
-let skylineColour = [206, 237, 216]; // colour of skyline
+//blue skylineColour option - [206, 237, 216]
+let skylineColour = [250, 235, 147]; // colour of skyline
 
 
 function setup_wallpaper(pWallpaper) {
@@ -44,7 +45,7 @@ function setup_wallpaper(pWallpaper) {
   //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
