@@ -11,14 +11,16 @@
 //Change colours of mountains and shadows of the top half of the mountains
 let mountainBackTopColour = [143, 133, 135]
 let mountainFrontTopColour = [127, 140, 104];
+
 let mountainShadowBackTopColour = [61, 57, 58]; 
 let mountainShadowFrontTopColour = [85, 92, 72]; 
 //change colours of the mountains and shadows of the bottom half of the mountains
 //they are currently the sam as the top half but you can change it if you want
-let mountainBackBelowColour = [143, 133, 135]; //light brown colour
-let mountainFrontBelowColour = [127, 140, 104]; //green colour
-let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
-let mountainShadowFrontBelowColour = [85, 92, 72]; //dark green colour
+let mountainBackBelowColour = [222, 185, 235]; //light brown colour
+let mountainFrontBelowColour = [138, 189, 145]; //green colour
+
+let mountainShadowBackBelowColour = [49, 8, 64]; //dark brown colour
+let mountainShadowFrontBelowColour = [87, 125, 120]; //dark green colour
 
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
@@ -26,19 +28,23 @@ let mountainsY = 0; // y position of the mountains
 let mountainsBelowX = 0; //x positon of the mountains below
 let mountainsBelowY = 0; //y position of the mountains below
 
-let setTime = 1; //use 1 or 0 to select night or day 
+let setTime = 0; //use 1 or 0 to select night or day 
 
 let skylineScale = 1; //scale of skyline, 1 being normal size and 2 being double the size
 
 let skylineYBase = 100; // y position of skyline to line up with mountains
 let skylineXBase = 100; // x position of skyline to line up with mountains
 
+//original skyline colour - [250, 235, 147]
+let skylineColour = [177, 242, 238]; // colour of skyline
+
+
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   //pWallpaper.output_mode(GRID_WALLPAPER);
   
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
+  pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -61,8 +67,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   skyline(0 + mountainsBelowX, 0 + mountainsBelowY); //draw the skyline below
   mountains(0 + mountainsX, 0 + mountainsY);  
   mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
-  
 
+  if (setTime == 0) { //day
+    fill(skylineColour + background(160, 186, 217)); //light blue colour 
+    noStroke(); 
+  } else { // night
+    fill(skylineColour + background(3, 38, 87)); //dark blue colour
+    noStroke(); }
+  
 }
 
 function mountains(x, y) {
@@ -153,10 +165,8 @@ triangle(70 + x, middleYaxis + y, 130 + x, 180 + y, 180 + x, middleYaxis + y); /
 }
 
 function skyline(x, y) {
-
- 
-
-  fill(250, 235, 147) //light yellow colour 
+//skyline - this skyline sits around the top and bottom mountains. 
+  fill(skylineColour) //light yellow colour 
   noStroke(); 
   beginShape();
   
