@@ -9,18 +9,18 @@
 //let mountainShadowFrontColour = [85, 92, 72]; 
 
 //Change colours of mountains and shadows of the top half of the mountains
-let mountainBackTopColour = [143, 133, 135]
-let mountainFrontTopColour = [127, 140, 104];
+let mountainBackTopColour = [222, 160, 196]
+let mountainFrontTopColour = [209, 208, 186];
 
 let mountainShadowBackTopColour = [61, 57, 58]; 
-let mountainShadowFrontTopColour = [85, 92, 72]; 
+let mountainShadowFrontTopColour = [245, 162, 118]; 
 //change colours of the mountains and shadows of the bottom half of the mountains
 //they are currently the sam as the top half but you can change it if you want
-let mountainBackBelowColour = [222, 185, 235]; //light brown colour
-let mountainFrontBelowColour = [138, 189, 145]; //green colour
+let mountainBackBelowColour = [222, 160, 196]; //light brown colour
+let mountainFrontBelowColour = [209, 208, 186]; 
 
-let mountainShadowBackBelowColour = [49, 8, 64]; //dark brown colour
-let mountainShadowFrontBelowColour = [87, 125, 120]; //dark green colour
+let mountainShadowBackBelowColour = [61, 57, 58]; //dark brown colour
+let mountainShadowFrontBelowColour = [245, 162, 118]; //dark green colour
 
 //mountains(0 + mountainsX, 0 + mountainsY) is the position of the mountains
 let mountainsX = 0; // x position of the mountains
@@ -30,13 +30,13 @@ let mountainsBelowY = 0; //y position of the mountains below
 
 let setTime = 0; //use 1 or 0 to select night or day 
 
-let skylineScale = 1; //scale of skyline, 1 being normal size and 2 being double the size
+let skylineScale = 1.2; //scale of skyline, 1 being normal size and 2 being double the size
 
 let skylineYBase = 100; // y position of skyline to line up with mountains
 let skylineXBase = 100; // x position of skyline to line up with mountains
 
 //original skyline colour - [250, 235, 147]
-let skylineColour = [177, 242, 238]; // colour of skyline
+let skylineColour = [206, 237, 216]; // colour of skyline
 
 
 function setup_wallpaper(pWallpaper) {
@@ -68,15 +68,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   mountains(0 + mountainsX, 0 + mountainsY);  
   mountainsBelow(0 + mountainsBelowX, 0 + mountainsBelowY); 
 
-  if (setTime == 0) { //day
-    fill(skylineColour + background(160, 186, 217)); //light blue colour 
-    noStroke(); 
-  } else { // night
-    fill(skylineColour + background(3, 38, 87)); //dark blue colour
-    noStroke(); }
-  
-}
 
+}
+//draw mountains in the skyline
 function mountains(x, y) {
   //mountains 
   //tophalf
@@ -120,7 +114,7 @@ function mountains(x, y) {
   triangle(130 + x, middleYaxis + y, 170 + x, 40 + y, 150 + x, middleYaxis + y); //triangle 5 front shadow
 
 }
-
+//draw a reflected mountain range below the top mountains
 function mountainsBelow(x, y) {
 //mountainsbelow - this is creating the same mountain ranges but flipped upside down and underneath the top mountains
 //bottomhalf
@@ -163,7 +157,7 @@ triangle(70 + x, middleYaxis + y, 130 + x, 180 + y, 180 + x, middleYaxis + y); /
 
   
 }
-
+//draw a skyline around the top and bottom mountains
 function skyline(x, y) {
 //skyline - this skyline sits around the top and bottom mountains. 
   fill(skylineColour) //light yellow colour 
